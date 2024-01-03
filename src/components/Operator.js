@@ -244,21 +244,66 @@ const Operator = () => {
     setShowShifttable((prevShowShifttable) => !prevShowShifttable);
   };
 
+  // const handleSendMaintenanceEmail = async () => {
+  //   const message = window.prompt("Enter your message for maintenance:");
+  //   if (!message) {
+  //     // User canceled the prompt or didn't enter any message
+  //     return;
+  //   }
+
+  //   // const emailSubject = "Maintenance Request";
+  //   // const emailAddress = "kiranmogal0309@gmail.com";
+  //   // const mailToUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(
+  //   //   emailSubject
+  //   // )}&body=${encodeURIComponent(message)}`;
+
+  //   // Open the user's default email client with a pre-filled email
+  //   // window.open(mailToUrl);
+
+  //   if (!selectedMachine || !symptomMachine || !PartMachine || !StatusMachine) {
+  //     // At least one option is not selected, do not add to the table
+  //     return;
+  //   }
+
+  //   const newMaintenanceItem = {
+  //     machine: selectedMachine,
+  //     symptom: symptomMachine,
+  //     part: PartMachine,
+  //     status: StatusMachine,
+  //     message: message,
+  //   };
+
+  //   setMaintenanceList([...maintenanceList, newMaintenanceItem]);
+  //   const transporter = nodemailer.createTransport({
+  //     service: "gmail",
+  //     auth: {
+  //       user: "ayurvedamart45@gmail.com",
+  //       pass: "hfxtvobbnoxvfmak",
+  //     },
+  //   });
+
+  //   const options = {
+  //     from: "ayurvedamart45@gmail.com",
+  //     to: "khushiwalje48@gmail.com",
+  //     subject: "hello world",
+  //     html: "hi ",
+  //   };
+
+  //   await transporter.sendMail(options);
+
+  //   // Reset the dropdown values
+  //   setSelectedMachine("");
+  //   setsymptomMachine("");
+  //   setPartMachine("");
+  //   setStatusMachine("");
+  // };
+
   const handleSendMaintenanceEmail = async () => {
     const message = window.prompt("Enter your message for maintenance:");
     if (!message) {
       // User canceled the prompt or didn't enter any message
       return;
     }
-
-    // const emailSubject = "Maintenance Request";
-    // const emailAddress = "kiranmogal0309@gmail.com";
-    // const mailToUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(
-    //   emailSubject
-    // )}&body=${encodeURIComponent(message)}`;
-
-    // Open the user's default email client with a pre-filled email
-    // window.open(mailToUrl);
 
     if (!selectedMachine || !symptomMachine || !PartMachine || !StatusMachine) {
       // At least one option is not selected, do not add to the table
@@ -273,23 +318,25 @@ const Operator = () => {
       message: message,
     };
 
-    setMaintenanceList([...maintenanceList, newMaintenanceItem]);
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "ayurvedamart45@gmail.com",
-        pass: "hfxtvobbnoxvfmak",
-      },
-    });
+    // setMaintenanceList([...maintenanceList, newMaintenanceItem]);
 
-    const options = {
-      from: "ayurvedamart45@gmail.com",
-      to: "khushiwalje48@gmail.com",
-      subject: "hello world",
-      html: "hi ",
-    };
+    try {
+      const response = await axios.post("http://localhost:3010/SendMail", {
+        selectedMachine,
+        symptomMachine,
+        PartMachine,
+        StatusMachine,
+        message,
+      });
 
-    await transporter.sendMail(options);
+      if (response.ok) {
+        console.log("Maintenance email sent successfully.");
+      } else {
+        console.error("Failed to send maintenance email.");
+      }
+    } catch (error) {
+      console.error("Error sending maintenance email:", error.message);
+    }
 
     // Reset the dropdown values
     setSelectedMachine("");
