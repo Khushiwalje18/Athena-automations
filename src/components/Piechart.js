@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import { PieChart, Pie } from 'recharts';
 import { motion } from 'framer-motion/dist/framer-motion'
-
+import '../App.css';
 
 const data01 = [
   {
@@ -85,11 +85,12 @@ export const Piechart = () => {
       <motion.div drag 
       // dragConstraints={{ left: -100, right:-100, top: -100, bottom:-100 }}
       >
-      <button onClick={incrementSize}>+</button>
-      <button onClick= {decrementSize}>-</button>
+      <button className='btn' onClick={incrementSize} >+</button>
+      <br/>
+      <button className='btn2' onClick= {decrementSize}>-</button>
       <div>
       <PieChart width={width} height={height} radius= {radi}>
-        <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%"  fill="#ff8a65"  label/>
+        <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%"  fill="#53a8b6"  label/>
         {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
       </PieChart>
       </div>

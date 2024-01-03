@@ -1,17 +1,49 @@
 .sensor1, .vibration2-data{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-  margin-left: 20px;
-  background-color: #646665;
-  width: 300px;
-  height: 200px;
-  border-radius: 1rem;
-  color: white;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+margin-left: 20px;
+background-color: #646665;
+width: 300px;
+height: 200px;
+border-radius: 1rem;
+color: white;
+padding: 1rem;
 }
 
+.chart1{
+position:absolute;
+top:80%;
+left: 10%;
+}
+
+.chart2{
+position:absolute;
+top:80%;
+left: 50%;
+}
+.chart3{
+top:131%;
+left: 30%;
+}
+
+.chart4{
+position:absolute;
+top:115%;
+left: 10%;
+}
+
+.chart5{
+position:absolute;
+top:115%;
+left: 50%;
+}
+.chart6{
+position:absolute;
+top:167%;
+left: 30%;
+}
 /* .sensor1-charts{
-    align-items: center;
-    align-content: center;
+  align-items: center;
+  align-content: center;
 } */

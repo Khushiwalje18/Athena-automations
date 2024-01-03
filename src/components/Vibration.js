@@ -3,7 +3,7 @@ import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Sidebar from './SideBar';
 import Dropdown from './Dropdown';
-// import './chartstyle.css';
+ import './chartstyle.css';
 import './Vibration.css';
 
 function Vibration() {
@@ -142,7 +142,9 @@ function Vibration() {
       <Dropdown onSelect={handleMachineClick} />
       <div className='temp-data'>
         <h1 style={{ fontSize:'20px',color: 'blue'}}>Vibrational Analysis</h1>
-        <div className='sensor1'>
+        <center>
+      <div className='sensor1'>
+      
         <div className='vibration1-data'>
           {currentVibData.map((item) => (
             <div
@@ -158,11 +160,13 @@ function Vibration() {
               <h2>Device:{val.Device}</h2>
               
              </div>
+            
   ))}
   </div>
   ))}
 </div>
 {/* <div className='sensor1-charts'> */}
+     
         {selectedMachines.length > 0 && showPast24HChart && (
           <div className='past-24h-charts'>
             {past24HVibsData.map((data) => (
@@ -171,6 +175,7 @@ function Vibration() {
               <div key={val.Device}
               className='current-temp-chart'
               >
+                <div className='chart1'>
                 <Chart
                   width={600}
                   height={350}
@@ -216,12 +221,15 @@ function Vibration() {
                   rootProps={{ 'data-testid': '1' }}
                 />
                 </div>
+                </div>
               ))}
               </div>
             ))}
           </div>
         )}
+        
       </div>
+      </center>
         {selectedMachines.length > 0 && showPast24HChart && (
           <div className='past-24h-charts'>
             {past24HVibsData.map((data) => (
@@ -230,9 +238,10 @@ function Vibration() {
               <div key={val.Device}
               className='current-temp-chart'
               >
+                <div className='chart2'>
                 <Chart
-                  width={700}
-                  height={400}
+                  width={600}
+                  height={350}
                   chartType='LineChart'
                   loader={<div>Loading Chart</div>}
                   data={data.vib1}
@@ -275,6 +284,7 @@ function Vibration() {
                   rootProps={{ 'data-testid': '2' }}
                 />
                 </div>
+                </div>
               ))}
               </div>
             ))}
@@ -288,6 +298,7 @@ function Vibration() {
               <div key={val.Device}
               className='current-temp-chart'
               >
+                <div className='chart3'>
                 <Chart
                   width={700}
                   height={400}
@@ -333,6 +344,7 @@ function Vibration() {
                   rootProps={{ 'data-testid': '3' }}
                 />
                 </div>
+                </div>
               ))}
               </div>
             ))}
@@ -342,6 +354,7 @@ function Vibration() {
         {/* </div> */}
 
       {/* gauge chart2     */}
+     <center>
       <div className='vibration2-data'>
         <div className='current-vibration-charts'>
           {currentVib1Data.map((item) => (
@@ -367,10 +380,11 @@ function Vibration() {
             {deviceData.map((val) => (
               <div key={val.Device}
               className='current-temp-chart'
-              >                
+              >     
+              <div className='chart4'>            
                 <Chart
-                  width={700}
-                  height={400}
+                  width={600}
+                  height={350}
                   chartType='LineChart'
                   loader={<div>Loading Chart</div>}
                   data={data2.data1}
@@ -413,12 +427,14 @@ function Vibration() {
                   rootProps={{ 'data-testid': '4' }}
                 />
                 </div>
+                </div>
             ))}
               </div>
             ))}
           </div>
         )}
       </div>
+    </center>
       {selectedMachines.length > 0 && showPast24HChart1 && (
           <div className='past-24h-charts'>
             {past24HVibs2Data.map((data2) => (
@@ -426,10 +442,11 @@ function Vibration() {
             {deviceData.map((val) => (
               <div key={val.Device}
               className='current-temp-chart'
-              >                
+              >    
+              <div className='chart5'>            
                 <Chart
-                  width={700}
-                  height={400}
+                  width={600}
+                  height={350}
                   chartType='LineChart'
                   loader={<div>Loading Chart</div>}
                   data={data2.data2}
@@ -472,6 +489,7 @@ function Vibration() {
                   rootProps={{ 'data-testid': '2' }}
                 />
                 </div>
+                </div>
             ))}
               </div>
             ))}
@@ -484,7 +502,8 @@ function Vibration() {
             {deviceData.map((val) => (
               <div key={val.Device}
               className='current-temp-chart'
-              >                
+              >   
+              <div className='chart6'>             
                 <Chart
                   width={700}
                   height={400}
@@ -529,6 +548,7 @@ function Vibration() {
                   }}
                   rootProps={{ 'data-testid': '2' }}
                 />
+                </div>
                 </div>
             ))}
               </div>

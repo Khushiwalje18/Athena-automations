@@ -17,7 +17,7 @@ const data = [
 
 const StackBar = () => {
     return (
-        <div className="stackbar-data" style =  {{backgroundColor: '#D4DAD7'}}>
+        <div className="stackbar-data" style =  {{backgroundColor: '#f1f7f4'}}>
             
     
       <motion.div
@@ -31,12 +31,12 @@ const StackBar = () => {
      <YAxis />
      <Tooltip />
      <Legend />
-     <Bar dataKey="Utilisation" stackId="a" fill="#8884d8" />
-     <Bar dataKey="UNSp" stackId="a" fill="#82ca9d" />
-     <Bar dataKey="NoPower" stackId="a" fill="#ff8a65" />
+     <Bar dataKey="Utilisation" stackId="a" fill="#113f67" />
+     <Bar dataKey="UNSp" stackId="a" fill="#5585b5" />
+     <Bar dataKey="NoPower" stackId="a" fill="#53a8b6" />
      {/* <Bar dataKey="UNSp" stackId="a" fill="##ba68c8" /> */}
-     <Bar dataKey="Training" stackId="a" fill="#79addc" />
-     <Bar dataKey="NoTools" stackId="a" fill="#e8a598" />
+     <Bar dataKey="Training" stackId="a" fill="#79c2d0" />
+     <Bar dataKey="NoTools" stackId="a" fill="#bbe4e9" />
      <Bar dataKey="Maintenance" stackId="a" fill="#87bc45" />
     </BarChart>
     </motion.div>

@@ -29,7 +29,9 @@ const Rejection = () => {
 return (
 	<>
       <Sidebar />
-	  <h1>Rejection</h1>
+	  <center>
+	  <h1 style={{ padding: "0 60px 0px 60px" ,fontFamily:"Monaco"}}>Rejection</h1>
+	  </center>
 	<div className="rejection">
 	
 	<motion.div
@@ -51,8 +53,9 @@ return (
          <Bar dataKey="ParllNok" stackId="a" fill="#53a8b6" />
 		 <Bar dataKey="DentMark" stackId="a" fill=" #bbe4e9" />
 		</BarChart>
+		<h1 style={{ padding: "0px 0px 0px 40px",fontFamily:"Monaco"}}>Operator Wise Rejection</h1>
 		</motion.div>
-
+		
 		<motion.div
         drag
       >
@@ -71,6 +74,7 @@ return (
          <Bar dataKey="ParllNok" stackId="a" fill="#53a8b6" />
 		 <Bar dataKey="DentMark" stackId="a" fill=" #bbe4e9" />
 		</BarChart>	
+		<h1 style={{ padding: "0 60px 0px 60px",fontFamily:"Monaco"}}>Machine Wise Rejection</h1>
 		</motion.div>
 
 		<motion.div
@@ -91,6 +95,7 @@ return (
          <Bar dataKey="ParllNok" stackId="a" fill="#53a8b6" />
 		 <Bar dataKey="DentMark" stackId="a" fill=" #bbe4e9" />
 		</BarChart> 
+		<h1 style={{ padding: "0px 0px 0px 95px",fontFamily:"Monaco"}}>Part Wise Rejection</h1>
 		</motion.div>
 	</div>
 	</>

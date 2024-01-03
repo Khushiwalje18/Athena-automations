@@ -17,8 +17,9 @@ const data = [
 		speed: 0.67,
 		weight: 0.8
 	  },
-	  meta: { color: '#82ca9d' }
+	  meta: { color: '#113f67' }
 	},
+
 	{
 	  data: {
 		battery: 0.6,
@@ -27,7 +28,7 @@ const data = [
 		speed: 0.6,
 		weight: 0.7
 	  },
-	  meta: { color: '#dce775' }
+	  meta: { color: '#bbe4e9' }
 	}
   ];
 

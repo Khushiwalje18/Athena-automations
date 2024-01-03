@@ -41,13 +41,16 @@ const Rework = () => {
   return (
     <>
       <Sidebar />
+      <center>
+      <h1 style={{ padding: "0 60px 0px 60px",fontFamily:"Monaco" }}>Rework</h1>
+      </center>
       <div className="rework">
-        <h1>Rework</h1>
+       
         <div className="container">
           <motion.div drag>
             <BarChart
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               data={rework}
               margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
             >
@@ -70,10 +73,34 @@ const Rework = () => {
               <Bar dataKey="GrooveRework" stackId="a" fill="#41506b" />
               <Bar dataKey="ParllelRework" stackId="a" fill="#263849" />
             </BarChart>
+           <h1 style={{ padding: "0 60px 0px 48px",fontFamily:"Monaco" }}>Operator Wise Rework</h1>
           </motion.div>
+         
         </div>
+        <motion.div
+	drag
+	>
+	<BarChart width={400} height={400} data={partrework}>
+	<CartesianGrid />
+		 <Bar dataKey="Utilization" />
+		 <XAxis dataKey="machine_name" fontSize={10} />
+		 <YAxis />
+		 <Tooltip />
+		 <Legend />
+		 <Bar dataKey="FaceRework" stackId="a" fill="#93e4c1" />
+		 <Bar dataKey="BoreRework" stackId="a" fill="#3baea0" />
+		 <Bar dataKey="RADRework" stackId="a" fill="#118a7e" />
+		 <Bar dataKey="IDRad" stackId="a" fill="1f6f78" />
+		 <Bar dataKey="FinishRough" stackId="a" fill="#90f6d7" />
+		 <Bar dataKey="MarkMissing" stackId="a" fill="#35bcbf" />
+		 <Bar dataKey="GrooveRework" stackId="a" fill="#41506b" />
+		 <Bar dataKey="ParllelRework" stackId="a" fill="#263849" />
+
+		</BarChart>	
+    <h1 style={{ padding: "0 60px 0px 60px",fontFamily:"Monaco" }}>Machine Wise Rework</h1>
+		</motion.div>
         <motion.div drag>
-          <BarChart width={500} height={500} data={partrework}>
+          <BarChart width={400} height={400} data={partrework}>
             <CartesianGrid />
             <Bar dataKey="Utilization" fill="purple" />
             <XAxis dataKey="part_name" fontSize={10} />
@@ -89,8 +116,9 @@ const Rework = () => {
               <Bar dataKey="GrooveRework" stackId="a" fill="#41506b" />
               <Bar dataKey="ParllelRework" stackId="a" fill="#263849" />
           </BarChart>
+          <h1 style={{ padding: "0px 0px 0px 95px",fontFamily:"Monaco"}}>Part Wise Rework</h1>
         </motion.div>
-      </div>
+     </div>
     </>
   );
 };

@@ -103,6 +103,9 @@ const Manager = () => {
     <>
       <Sidebar />
       <CurrentDateTime />
+      <button style={{ float: 'right', marginRight: '33px' }}className="analysis">
+      Data Analysis
+    </button>
       <h1 style={{ textAlign: 'center' }}>Manager data</h1>
       <div className="app-container">
         <table className="table" id="mantable">
@@ -150,6 +153,8 @@ const Manager = () => {
                   <input type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} />
                 )}
               </td>
+
+   
               <td>
                 <button onClick={handleAddClick}>Add</button>
               </td>

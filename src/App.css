@@ -8,7 +8,7 @@
 
 .home{
 
-  background-color: #D4DAD7;
+  background-color: #f1f7f4;
   margin-top: 35px;
   text-align: left;
   display:flex;
@@ -146,4 +146,11 @@
 
 }
 
-
+/*button colors changed in pie chart*/
+.btn {
+background-color:#247291;
+}
+.btn2 {
+  background-color:#247291;
+  }
+  
